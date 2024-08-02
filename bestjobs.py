@@ -16,8 +16,16 @@ soup = BeautifulSoup(jobs,"html.parser")
 
 # print(soup.find_all("div"))
 
-print(soup.find_all("a"))
+# print(soup.find_all("a"))
 
+all_jobs = soup.find_all("div",{"class":"tablo-senaryosu"})
+all_points = soup.find_all("td",{"class":"col10"})
+
+for job in all_jobs:
+    print(job.tr.text)
+
+for point in all_points:
+    print(job.td.text)
 
 # all_jobs = soup.find_all("p",{"class":"h2 m-0 entryWinner pb-std pb-md-0"})
 
